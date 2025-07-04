@@ -361,7 +361,17 @@ https://templatemo.com/tm-565-onix-digital
                 </div>
               </div>
               <!-- Right column intentionally empty: image is handled via CSS -->
-              <div class="col-lg-6"></div>
+              <!-- Right column with image (only visible on lg and above) -->
+              <div
+                class="col-lg-6 d-none d-lg-block align-self-center text-end"
+              >
+                <img
+                  src="assets/images/Ipc-office.jpeg"
+                  alt="ipc-office-image"
+                  class="img-fluid"
+                  style="max-width: 100%; border-radius: 30px"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -717,6 +727,9 @@ https://templatemo.com/tm-565-onix-digital
                     <div class="inner-content">
                       <h4>Partner Product Sales</h4>
                       <span>Sell trusted brands and earn commission</span>
+                      <div class="alt-slate-button mt-2">
+                        <a href="#contact">Contact Us</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -749,6 +762,9 @@ https://templatemo.com/tm-565-onix-digital
                     <div class="inner-content">
                       <h4>Product Supply Partnership</h4>
                       <span>Distribute our in-house products locally</span>
+                      <div class="alt-slate-button mt-2">
+                        <a href="#contact">Contact Us</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -765,6 +781,9 @@ https://templatemo.com/tm-565-onix-digital
                     <div class="inner-content">
                       <h4>Hiring & Training</h4>
                       <span>Join as salesperson, marketer, or laborer</span>
+                      <div class="alt-slate-button mt-2">
+                        <a href="#contact">Contact Us</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -813,6 +832,9 @@ https://templatemo.com/tm-565-onix-digital
                     <div class="inner-content">
                       <h4>Investor Program</h4>
                       <span>Invest and earn with profit-sharing</span>
+                      <div class="alt-slate-button mt-2">
+                        <a href="#contact">Contact Us</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1421,7 +1443,7 @@ https://templatemo.com/tm-565-onix-digital
         function disableAutoplayPermanently() {
           const owlInstance = $owl.data("owl.carousel");
           if (owlInstance) {
-            owlInstance._plugins.autoplay.autoplayTimeout = null; 
+            owlInstance._plugins.autoplay.autoplayTimeout = null;
             owlInstance.settings.autoplay = false;
             owlInstance.options.autoplay = false;
             $owl.trigger("stop.owl.autoplay");
@@ -1455,7 +1477,7 @@ https://templatemo.com/tm-565-onix-digital
         function disableAutoplayPermanently() {
           const owlInstance = $owl.data("owl.carousel");
           if (owlInstance) {
-            owlInstance._plugins.autoplay.autoplayTimeout = null; 
+            owlInstance._plugins.autoplay.autoplayTimeout = null;
             owlInstance.settings.autoplay = false;
             owlInstance.options.autoplay = false;
             $owl.trigger("stop.owl.autoplay");
@@ -1489,7 +1511,7 @@ https://templatemo.com/tm-565-onix-digital
         function disableAutoplayPermanently() {
           const owlInstance = $owl.data("owl.carousel");
           if (owlInstance) {
-            owlInstance._plugins.autoplay.autoplayTimeout = null; 
+            owlInstance._plugins.autoplay.autoplayTimeout = null;
             owlInstance.settings.autoplay = false;
             owlInstance.options.autoplay = false;
             $owl.trigger("stop.owl.autoplay");
@@ -1504,4 +1526,3 @@ https://templatemo.com/tm-565-onix-digital
     </script>
   </body>
 </html>
-

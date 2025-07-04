@@ -265,6 +265,25 @@ body {
   background-color: #03a4ed;
 }
 
+.alt-slate-button a {
+  display: inline-block;
+  background-color: #4e4e4e; 
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
+  text-transform: capitalize;
+  padding: 12px 25px;
+  border-radius: 23px;
+  letter-spacing: 0.25px;
+  transition: all 0.3s;
+}
+
+.alt-slate-button a:hover {
+  background-color: #2e2e2e; 
+  color: #fff;
+}
+
+
 .main-white-button a {
   display: inline-block;
   background-color: #fff;
@@ -908,22 +927,22 @@ Banner Style
   border-radius: 40px;
 } */
 
-.main-banner:before {
+/* .main-banner:before {
   content: '';
   background-image: url(../images/Ipc-office.jpeg);
   background-repeat: no-repeat;
-  background-size: cover; /* 👈 OR 'cover' depending on effect you want */
+  background-size: cover; 
   background-position: right center;
   position: absolute;
   right: 40px;
   top: 100px;
-  width: 50vw;  /* 👈 Makes it scale with viewport */
-  height: 50vw; /* Adjust based on proportion you want */
+  width: 50vw; 
+  height: 50vw; 
   max-width: 819px;
   max-height: 674px;
   border-radius: 40px;
   z-index: 1;
-}
+} */
 
 
 /* .right-image {
