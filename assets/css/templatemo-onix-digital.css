@@ -884,7 +884,7 @@ Banner Style
   overflow: hidden;
 }
 
-.main-banner:after {
+/* .main-banner:after {
   content: '';
   background-image: url(../images/services-right-dec.png);
   background-repeat: no-repeat;
@@ -893,7 +893,7 @@ Banner Style
   top: 100px;
   width: 267px;
   height: 532px;
-}
+} */
 
 /* .main-banner:before {
   content: '';
@@ -910,7 +910,7 @@ Banner Style
 
 .main-banner:before {
   content: '';
-  background-image: url(../images/collaboration-desk.jpg);
+  background-image: url(../images/Ipc-office.jpeg);
   background-repeat: no-repeat;
   background-size: cover; /* 👈 OR 'cover' depending on effect you want */
   background-position: right center;
@@ -1869,7 +1869,7 @@ footer .footer-item h4 {
 
 footer .about .logo img {
   width: 89px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 }
 
 footer .about a {
@@ -1986,7 +1986,13 @@ responsive
 
 }
 
+
+
 @media (max-width: 992px) {
+
+   .main-banner {
+    padding: 120px 0 100px 0; /* adjust as needed */
+  }
   .main-banner::before {
     display: none;
   }
