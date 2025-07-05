@@ -1134,7 +1134,13 @@ https://templatemo.com/tm-565-onix-digital
             </div>
           </div>
           <div class="col-lg-5 align-self-center">
-            <form id="contact" action="" method="get">
+            <!-- <form id="contact" action="" method="get"> -->
+            <form
+              id="contact"
+              action=""
+              method="POST"
+              class="contact-form"
+            >
               <div class="row">
                 <div class="col-lg-12">
                   <fieldset>
@@ -1185,13 +1191,28 @@ https://templatemo.com/tm-565-onix-digital
                 </div>
                 <div class="col-lg-12">
                   <fieldset>
-                    <button type="submit" id="form-submit" class="main-button">
+                    <!-- <button type="submit" id="form-submit" class="main-button">
                       Submit Request
+                    </button> -->
+                    <button
+                      type="submit"
+                      id="form-submit"
+                      class="main-button d-inline-flex align-items-center gap-2"
+                    >
+                      <span
+                        class="spinner-border spinner-border-sm text-primary"
+                        id="form-spinner"
+                        style="display: none; color: #03a4ed"
+                        role="status"
+                        aria-hidden="true"
+                      ></span>
+                      <span class="text">Submit Request</span>
                     </button>
                   </fieldset>
                 </div>
               </div>
             </form>
+            <p id="form-status" style="display: none; margin-top: 15px;"></p>
           </div>
         </div>
       </div>
@@ -1524,5 +1545,59 @@ https://templatemo.com/tm-565-onix-digital
         });
       });
     </script>
+
+    <script>
+  const form = document.querySelector(".contact-form");
+  const status = document.getElementById("form-status");
+  const submitButton = document.getElementById("form-submit");
+  const spinner = document.getElementById("form-spinner");
+  const textSpan = submitButton.querySelector(".text");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault(); // stop default
+
+    // Show spinner + disable button
+    status.style.display = "block";
+    status.textContent = "Sending...";
+    submitButton.disabled = true;
+    textSpan.textContent = "Sending...";
+    spinner.style.display = "inline-block";
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (response.ok) {
+        status.textContent = "Message sent successfully!";
+        form.reset();
+      } else {
+        const data = await response.json();
+        if (data.errors) {
+          status.textContent = data.errors.map(e => e.message).join(", ");
+        } else {
+          status.textContent = "Oops! Something went wrong.";
+        }
+      }
+    } catch (error) {
+      status.textContent = "Failed to send. Please try again later.";
+    }
+
+    // Reset after 4 seconds
+    setTimeout(() => {
+      submitButton.disabled = false;
+      textSpan.textContent = "Submit Request";
+      spinner.style.display = "none";
+      status.style.display = "none";
+    }, 4000);
+  });
+</script>
+
   </body>
 </html>
